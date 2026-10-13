@@ -1,0 +1,59 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = 'Samuel Musa — Graphic Designer',
+  description = 'Posters, branding, digital & AI art by Samuel Musa'
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-white/5">
+      <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="/" class="text-lg font-semibold tracking-tight hover:text-accent transition-colors">
+          Samuel Musa
+        </a>
+        <div class="flex items-center gap-8 text-sm font-medium text-muted">
+          <a href="/#work" class="hover:text-white transition-colors">Work</a>
+          <a href="/about" class="hover:text-white transition-colors">About</a>
+          <a href="/contact" class="hover:text-white transition-colors">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="flex-1 pt-20">
+      <slot />
+    </main>
+
+    <footer class="border-t border-white/5 py-12 mt-24">
+      <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6 text-sm text-muted">
+        <p>© {new Date().getFullYear()} Samuel Musa</p>
+        <div class="flex items-center gap-6">
+          <a href="https://github.com/GODMODE25" target="_blank" rel="noopener" class="hover:text-white transition-colors">
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/godmode26" target="_blank" rel="noopener" class="hover:text-white transition-colors">
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
