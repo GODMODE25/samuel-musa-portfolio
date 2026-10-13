@@ -3,5 +3,5 @@ import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
   integrations: [tailwind()],
-  site: 'https://samuelmusaportfolio.vercel.app',
+  site: 'https://samuelmusagraphics.vercel.app',
 });
